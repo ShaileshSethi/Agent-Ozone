@@ -49,7 +49,13 @@ function filmCard(film,index){
   duration.textContent=film.label;
   const play=document.createElement('span');
   play.className='film-play';
-  play.textContent='▶';
+  const playSvg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  playSvg.setAttribute('viewBox','0 0 24 24');
+  playSvg.classList.add('ui-icon');
+  const playUse=document.createElementNS('http://www.w3.org/2000/svg','use');
+  playUse.setAttribute('href','#icon-play');
+  playSvg.append(playUse);
+  play.append(playSvg);
   play.setAttribute('aria-hidden','true');
   button.append(image,episode,duration,play);
   const title=document.createElement('h3');

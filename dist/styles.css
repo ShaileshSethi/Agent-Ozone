@@ -1,7 +1,6 @@
-@font-face{font-family:Fraunces;src:url('fonts/fraunces-bold.ttf') format('truetype');font-weight:700;font-display:swap}
 @font-face{font-family:'Space Grotesk';src:url('fonts/space-grotesk-regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'Space Grotesk';src:url('fonts/space-grotesk-semibold.ttf') format('truetype');font-weight:600 900;font-display:swap}
-:root{--navy:#181713;--deep:#11110f;--paper:#f3e6cc;--coral:#ef8c46;--blue:#ec8a43;--mint:#e6c795;--muted:#b0a797;--line:#e5cfaa26;--font:'Space Grotesk',Arial,sans-serif;--display:Fraunces,Georgia,serif}
+:root{--navy:#141516;--deep:#0d0e10;--paper:#f3e6cc;--coral:#ef8c46;--blue:#6590ff;--mint:#c4d3f5;--muted:#a9aaa8;--line:#e5cfaa26;--font:'Space Grotesk',Arial,sans-serif;--display:'Space Grotesk',Arial,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{margin:0;background:var(--navy);color:var(--paper);font-family:var(--font);font-size:16px;overflow-x:hidden;transition:background .6s}
@@ -378,6 +377,69 @@ h2{letter-spacing:-2px;line-height:1.1}
  .desk-radio{padding-left:18px;padding-top:15px}.desk-radio>.eyebrow{font-size:7px;letter-spacing:.8px;padding-right:8px}.desk-radio p{font-size:21px;min-height:105px;margin-top:18px}.desk-radio .underlined-button{font-size:8px}.desk-radio .underlined-button>span{margin-left:4px}.radio-bars{display:none}
  .films-section{padding-top:55px}.film-poster{border-radius:48px 48px 10px 10px}.film-card h3{font-size:17px;line-height:1.2}.film-episode{left:10px;bottom:45px}
  .character-card{border-radius:95px 95px 10px 10px}.character-copy h3{font-size:30px}.maker-section h2{font-size:40px}.brand{font-size:23px}
+}
+/* Ozone / Codex: a custom terminal identity and a shared vector icon system. */
+.brand-symbols{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.ui-icon,.ozone-mark{display:inline-block;flex:none;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;width:18px;height:18px}
+.ozone-mark{width:100%;height:100%}
+.brand{font-family:var(--font);font-weight:600;letter-spacing:-1.5px;font-size:24px;gap:12px}
+.brand-mark{width:49px;height:49px;background:#1c1e22;border:1px solid #8393b333;color:var(--paper);transform:none;border-radius:12px;padding:6px;box-shadow:0 5px 20px #0003}
+.brand-second{margin-top:3px}.brand-cursor{color:var(--blue);margin-left:1px}
+.brand-cursor,.heading-cursor{animation:terminal-cursor 2.4s steps(1) infinite}
+h1{font-weight:600;letter-spacing:-5px;line-height:1.02;font-size:clamp(58px,6.6vw,96px)}
+h2{font-weight:600;letter-spacing:-2.5px}.world-word{font-style:normal}
+.heading-cursor{color:var(--blue);font-weight:400;letter-spacing:-6px}
+.hero>.hero-copy>.eyebrow{font:10px/1.6 Consolas,monospace;letter-spacing:1px;color:var(--muted)}
+.hero-film{border-radius:28px;border-color:#8c9ebc55;transform:rotate(2deg);box-shadow:12px 20px 0 #05060888,0 0 65px #6590ff0c}
+.hero-film-top{justify-content:flex-start;top:21px;left:22px;right:22px}
+.hero-film-top>span:last-child{display:block}
+.hero-film-caption>strong{font-family:var(--font);font-weight:600}
+.room-sticker{font:11px/1.6 Consolas,monospace;background:#202329;color:#c7d7ff;border:1px solid #8ca8df44;border-radius:6px;transform:rotate(-3deg);padding:11px 16px;box-shadow:0 7px 20px #0005;top:5px;left:-6px}
+.floating-star{animation:stage-breathe 6s ease-in-out infinite alternate;width:64px;height:64px;color:var(--blue);font-size:0}
+.floating-star>.ui-icon{width:100%;height:100%;stroke-width:1}
+.tiny-star{display:flex;align-items:center;justify-content:center;font-size:0;width:32px;height:32px;color:var(--blue)}
+.tiny-star>.ui-icon{width:28px;height:28px}
+.big-star{animation:none;width:80px;height:80px;font-size:0;color:var(--paper)}
+.light-switch>.ui-icon{color:var(--coral);width:21px;height:21px}
+.light-switch:hover>.ui-icon{transform:none}
+.hero-socials>a,.footer-socials>a{display:inline-flex;align-items:center;gap:7px}
+.hero-socials>a>.ui-icon,.footer-socials>a>.ui-icon{width:12px;height:12px}
+.hero-socials>a>.ui-icon:last-child,.footer-socials>a>.ui-icon:last-child{width:10px;height:10px;opacity:.6}
+.button>.ui-icon{width:18px;height:18px}
+.text-link .ui-icon,.underlined-button .ui-icon,.place-card .ui-icon{width:14px;height:14px}
+.underlined-button>.ui-icon{margin-left:5px}
+.maker-socials>.underlined-button{display:flex;align-items:center;gap:7px}
+.hero-round-play>.ui-icon{width:22px;height:22px}
+.ticker-track>.ui-icon{width:17px;height:17px;color:var(--blue)}
+.search-box>.ui-icon{width:17px;height:17px;color:var(--muted)}
+.film-play>.ui-icon{width:18px;height:18px}
+.icon-button>.ui-icon{width:20px;height:20px}
+.coffee-cup{font:600 25px var(--font)}
+.coffee-cup>span>.ozone-mark{width:15px;height:15px}
+.coffee-caption{font-weight:600;font-size:19px}
+.coffee-caption small>.ui-icon{width:10px;height:10px}
+.desk-note{transform:rotate(-2deg);border-radius:3px;background:#e8dcc5}
+.desk-note p{font-size:23px;line-height:1.22;font-weight:600}.desk-note p em,.desk-heading em{font-style:normal}
+.desk-heading>p{font-size:29px;line-height:1.2;font-weight:600}
+.desk-radio p{font-size:24px;line-height:1.3;font-weight:600}
+.desk-radio>.eyebrow{color:var(--blue)}
+.film-poster{border-radius:15px}.film-card h3{font:600 18px/1.25 var(--font)}
+.character-card{border-radius:18px}.character-copy h3{font:600 30px/1.1 var(--font)}
+.character-scribble{font:600 16px/1.25 var(--font);border-radius:5px}
+.maker-section{background:#1d2025;color:var(--paper);border-block:1px solid #8ba1cb2b}
+.maker-section p{color:var(--muted)}.maker-section .ink{background:var(--paper);color:var(--deep)}
+.recipe-card{border-radius:10px;transform:rotate(2deg)}.recipe-card>div{font:600 21px/1.4 var(--font)}
+.cast-section .blue{color:#345ba6}.wardrobe-note .tiny-star{color:#345ba6}
+.mascot-bubble{font:600 12px/1.4 var(--font);border-radius:12px 12px 12px 2px}
+@keyframes terminal-cursor{0%,74%,100%{opacity:1}75%,99%{opacity:.15}}
+@media(max-width:1000px){h1{font-size:clamp(53px,7vw,80px);letter-spacing:-3.5px}.big-star{width:45px;height:45px}}
+@media(max-width:600px){
+ h1{font-size:clamp(45px,12vw,72px);letter-spacing:-2.6px;line-height:1.06}.brand{font-size:21px;gap:9px}.brand-mark{width:41px;height:41px;padding:5px;border-radius:10px}
+ .hero>.hero-copy>.eyebrow{font-size:8px;letter-spacing:.5px}.hero-film{border-radius:22px}.hero-film-top{left:17px;right:17px;top:20px}
+ .hero-film-caption>strong{font-size:23px}.room-sticker{font-size:9px;max-width:190px;top:0;left:0}.floating-star{width:50px;height:50px;right:-5px}
+ .desk-heading>p{font-size:25px}.desk-note p{font-size:19px}.desk-radio p{font-size:20px}.desk-note{padding-inline:14px}
+ .film-poster{border-radius:12px}.film-card h3{font-size:15px}.character-copy h3{font-size:27px}.character-card{border-radius:16px}
+ .hero-socials>a,.footer-socials>a{gap:5px}.mascot-bubble{font-size:11px}.big-star{width:40px;height:40px}.recipe-card>div{font-size:20px}
 }
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
