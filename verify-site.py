@@ -42,7 +42,7 @@ for video in ROOT.parent.glob('*.mp4'):
 for file in DIST.rglob('*'):
     if not file.is_file():
         continue
-    assert file.suffix.lower() in ('.mp4','.jpg','.png','.svg','.html','.css','.js','.json'),file
+    assert file.suffix.lower() in ('.mp4','.jpg','.png','.svg','.html','.css','.js','.json','.ttf','.txt'),file
     assert not file.name.startswith('.'),file
     if file.suffix in ('.html','.css','.js','.json','.svg'):
         text=file.read_text(encoding='utf8')

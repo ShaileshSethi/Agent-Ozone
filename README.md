@@ -1,5 +1,7 @@
 # Agent Ozone
 
+The studio uses a charcoal, cream and burnt-orange palette, locally bundled Fraunces and Space Grotesk fonts (OFL licenses in `dist/fonts`), warm drifting light, ambient dust, a steaming coffee interaction and rotating Codex desk notes. Motion respects reduced-motion settings; the ambient canvas pauses in hidden tabs.
+
 Shailesh Sethi's personal animation portfolio. A static website with a 19-film library, character and environment galleries, a responsive cinema player, animated Codex illustration and warm studio lighting toggle. Instagram links point to @shaileshtunes and @agent_ozy.
 
 The background combines drifting colour glows, a local canvas star field, occasional shooting stars and a pointer glow. The canvas pauses when the tab is hidden and becomes static for reduced-motion preferences.

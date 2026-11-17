@@ -184,7 +184,7 @@ $('#load-more').addEventListener('click',()=>{
 $('#light-switch').addEventListener('click',()=>{
   const warm=document.body.classList.toggle('warm');
   $('#light-switch').setAttribute('aria-pressed',String(warm));
-  $('#light-switch').setAttribute('aria-label',warm?'Switch to blue studio lighting':'Switch to warm studio lighting');
+  $('#light-switch').setAttribute('aria-label',warm?'Dim the desk lamp':'Turn up the desk lamp');
 });
 const thoughts=[
   ['press play.','overthink later.'],
@@ -192,6 +192,27 @@ const thoughts=[
   ['One more film?','I’ll wait.'],
   ['You were parked.']
 ];
+const deskThoughts=[
+  'You can start small. I’ll be right here.',
+  'Someone else being ahead doesn’t mean you’re behind.',
+  'Rest is allowed. The next frame can wait.',
+  'A tiny thing, finished, can become something big.',
+  'You don’t have to be impressive to belong here.'
+];
+let deskThought=0;
+$('#next-thought').addEventListener('click',()=>{
+  deskThought=(deskThought+1)%deskThoughts.length;
+  $('#desk-thought').textContent=deskThoughts[deskThought];
+});
+let coffeeBreaks=0;
+$('#coffee-button').addEventListener('click',()=>{
+  coffeeBreaks++;
+  showToast(coffeeBreaks===1?'Codex: There you are. Take a breath. The tabs can wait.':'Codex: Still here. No productivity required.');
+  $('#coffee-button .coffee-caption').replaceChildren(
+    document.createTextNode('stay a minute.'),
+    Object.assign(document.createElement('small'),{textContent:'you’ve got good company'})
+  );
+});
 let thought=0;
 $('#mascot-button').addEventListener('click',()=>{
   thought=(thought+1)%thoughts.length;
@@ -268,13 +289,13 @@ function drawSky(time){
     const x=(star.x*skyWidth+seconds*star.speed*2)%skyWidth;
     const y=(star.y*skyHeight+Math.sin(seconds*.07+star.phase)*12+skyHeight)%skyHeight;
     const alpha=.2+.45*(.5+.5*Math.sin(seconds*.75+star.phase));
-    skyContext.fillStyle='rgba(190,218,255,'+alpha+')';
+    skyContext.fillStyle='rgba(231,197,144,'+(alpha*.65)+')';
     skyContext.beginPath();
     skyContext.arc(x,y,star.size,0,Math.PI*2);
     skyContext.fill();
     const distance=Math.hypot(x-pointer.x,y-pointer.y);
     if(!motionPreference.matches&&distance<150&&connections<7){
-      skyContext.strokeStyle='rgba(132,191,255,'+((1-distance/150)*.22)+')';
+      skyContext.strokeStyle='rgba(233,166,94,'+((1-distance/150)*.12)+')';
       skyContext.lineWidth=.7;
       skyContext.beginPath();
       skyContext.moveTo(pointer.x,pointer.y);
@@ -288,8 +309,8 @@ function drawSky(time){
     const progress=sweep/1.4;
     const x=skyWidth*(.12+progress*.65),y=skyHeight*(.08+progress*.30);
     const trail=skyContext.createLinearGradient(x-100,y-45,x,y);
-    trail.addColorStop(0,'rgba(178,222,255,0)');
-    trail.addColorStop(1,'rgba(207,238,255,'+(Math.sin(progress*Math.PI)*.7)+')');
+    trail.addColorStop(0,'rgba(236,194,128,0)');
+    trail.addColorStop(1,'rgba(246,216,169,'+(Math.sin(progress*Math.PI)*.35)+')');
     skyContext.strokeStyle=trail;
     skyContext.lineWidth=1.2;
     skyContext.beginPath();

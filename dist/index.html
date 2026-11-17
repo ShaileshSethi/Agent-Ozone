@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0a204d">
+  <meta name="theme-color" content="#181713">
   <meta name="description" content="Agent Ozone — Shailesh Sethi’s animated universe. Short films, a little blue friend, and stories made after midnight.">
   <meta property="og:title" content="Agent Ozone — Little worlds, big feelings">
   <meta property="og:description" content="Step into Shailesh’s animated universe. Watch the films, meet the characters and explore their worlds.">
   <meta property="og:type" content="website">
   <title>Agent Ozone — Shailesh Sethi’s animated universe</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/fraunces-bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -21,15 +22,15 @@
       <span class="brand-mark" aria-hidden="true">&gt;_</span><span>agent<span class="brand-second">ozone.</span></span>
     </a>
     <nav aria-label="Main navigation"><a href="#films">The films</a><a href="#cast">The cast</a><a href="#places">The places</a><a href="#maker">The maker</a></nav>
-    <button class="light-switch" id="light-switch" type="button" aria-pressed="false" aria-label="Switch to warm studio lighting"><span aria-hidden="true">✳</span> Studio lights</button>
+    <button class="light-switch" id="light-switch" type="button" aria-pressed="false" aria-label="Turn up the desk lamp"><span aria-hidden="true">✳</span> Desk lamp</button>
   </header>
 
   <main>
     <section class="hero section-wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> SHAILESH'S AFTER-HOURS PLAYGROUND</div>
-        <h1 id="hero-title">Big feelings.<br>Small <span class="world-word">worlds<svg viewBox="0 0 390 22" aria-hidden="true"><path d="M5 15Q170-7 383 10M23 19Q190 2 365 16"/></svg></span>.</h1>
-        <p class="hero-description">Overthinking. Starting things. Staying up too late.<br>A little animated life, with a little blue friend.</p>
+        <div class="eyebrow"><span class="status-dot"></span> THE LIGHTS ARE STILL ON</div>
+        <h1 id="hero-title">Big feelings.<br>Small <span class="world-word">worlds.<svg viewBox="0 0 390 22" aria-hidden="true"><path d="M5 15Q170-7 383 10M23 19Q190 2 365 16"/></svg></span></h1>
+        <p class="hero-description">Come in. We’re probably overthinking something.<br> Little films, late-night thoughts, and a blue friend<br class="desktop-break"> who always leaves room for you.</p>
         <div class="hero-actions"><button class="button peach" type="button" data-play="day-13"><span class="play-icon">▶</span> Watch the latest</button><a class="text-link" href="#films">Explore the films <span>↗</span></a></div>
         <div class="maker-note"><span class="tiny-star">✳</span><span>Made by <strong>Shailesh Sethi</strong><br><span class="muted">With code, curiosity &amp; a few late nights.</span></span></div>
         <div class="hero-socials" aria-label="Instagram accounts"><span>FIND ME ON INSTAGRAM</span><a href="https://www.instagram.com/shaileshtunes/" target="_blank" rel="noopener noreferrer">@shaileshtunes ↗</a><a href="https://www.instagram.com/agent_ozy/" target="_blank" rel="noopener noreferrer">@agent_ozy ↗</a></div>
@@ -38,7 +39,7 @@
       <div class="hero-stage">
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
         <span class="floating-star star-one" aria-hidden="true">✳</span>
-        <span class="room-sticker">a very small cinematic universe</span>
+        <span class="room-sticker">leave your worries at the door. ↙</span>
         <button class="hero-film" type="button" data-play="day-13" aria-label="Play The launch-day plan">
           <img src="media/art/hero-room.jpg" alt="The boy in his tropical shirt and blue Codex in their neon midnight room" fetchpriority="high">
           <span class="hero-film-top"><span class="record-dot"></span> THE MIDNIGHT ROOM <span>01:00-ish</span></span>
@@ -61,8 +62,15 @@
           </svg>
         </button>
         <div class="mascot-bubble" id="mascot-bubble" aria-live="polite">press play.<br>overthink later.</div>
-        <span class="stage-tag"><span class="status-dot"></span> A LITTLE WORLD. ALWAYS IN PROGRESS.</span>
+        <span class="stage-tag"><span class="status-dot"></span> SOMEONE’S ALWAYS MAKING SOMETHING.</span>
       </div>
+    </section>
+
+    <section class="desk-shelf section-wrap" aria-label="A few things left on the studio desk">
+      <div class="desk-heading"><span class="eyebrow">01 / ON THE DESK</span><p>A little messy.<br><em>A little us.</em></p></div>
+      <div class="desk-note"><span class="note-pin" aria-hidden="true"></span><span class="eyebrow">NOTE TO SELF</span><p>It doesn’t have to be<br>perfect to mean<br><em>something.</em></p><span class="note-signature">— probably needed this today</span></div>
+      <button class="coffee-corner" id="coffee-button" type="button" aria-label="Take a coffee break with Codex"><span class="coffee-steam" aria-hidden="true"><i></i><i></i><i></i></span><span class="coffee-cup" aria-hidden="true">oz.<span>✳</span></span><span class="coffee-caption">still warm.<small>take a tiny break ↗</small></span></button>
+      <div class="desk-radio"><span class="eyebrow"><span class="status-dot"></span> A THOUGHT FROM CODEX</span><p id="desk-thought" aria-live="polite">You can start small.<br>I’ll be right here.</p><button class="underlined-button" id="next-thought" type="button">Leave me another thought <span>↗</span></button><span class="radio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
     </section>
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>SMALL STORIES</span> ✳ <span>LATE NIGHTS</span> ✳ <span>BIG FEELINGS</span> ✳ <span>ONE BLUE FRIEND</span> ✳ <span>MADE WITH CODE</span> ✳ <span>SMALL STORIES</span> ✳ <span>LATE NIGHTS</span> ✳ <span>BIG FEELINGS</span> ✳ <span>ONE BLUE FRIEND</span> ✳ <span>MADE WITH CODE</span> ✳</div></div>
