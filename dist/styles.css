@@ -5,7 +5,25 @@ body{margin:0;background:var(--navy);color:var(--paper);font-family:var(--font);
 body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(#fff8 0.5px,transparent .5px);background-size:7px 7px;opacity:.025;pointer-events:none;z-index:9}
 body.warm{--navy:#25213f;--deep:#181526;--blue:#b49bff;--mint:#ffdaac}
 body.modal-open{overflow:hidden}
-main{overflow:clip}
+main{overflow:clip;position:relative;z-index:1}
+.site-header,.site-footer{position:relative;z-index:1}
+.ambient-scene{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.aurora{position:absolute;width:900px;height:750px;border-radius:50%;filter:blur(65px);will-change:transform;opacity:.65}
+.aurora-blue{left:-300px;top:-230px;background:radial-gradient(ellipse,#3569e28c,transparent 68%);animation:aurora-drift 23s ease-in-out infinite alternate}
+.aurora-coral{right:-450px;top:20vh;background:radial-gradient(ellipse,#b06baf70,transparent 68%);animation:aurora-drift 31s ease-in-out -11s infinite alternate-reverse}
+.ambient-grid{position:absolute;inset:0;background-image:linear-gradient(#94c9ff0a 1px,transparent 1px),linear-gradient(90deg,#94c9ff0a 1px,transparent 1px);background-size:95px 95px;mask-image:linear-gradient(transparent,#0005 45%,transparent)}
+#night-sky{position:absolute;inset:0;width:100%;height:100%}
+.pointer-light{position:absolute;left:0;top:0;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,#6e9fff2b,transparent 65%);opacity:0;transform:translate(-600px,-600px);transition:opacity .4s;will-change:transform}
+.hero-socials{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:24px;font-size:11px}
+.hero-socials>span{width:100%;color:var(--muted);font:700 8px monospace;letter-spacing:1.4px}
+.hero-socials>a{color:var(--mint);padding-block:4px;border-bottom:1px solid #baf1dd40}
+.hero-socials>a:hover{color:var(--paper);border-bottom-color:var(--coral)}
+.maker-socials{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
+.footer-socials{margin-left:auto;display:flex;gap:22px;font-size:11px;color:var(--mint)}
+.footer-socials a{padding:7px 0;border-bottom:1px solid #baf1dd40}
+.hero-stage:before{content:"";position:absolute;inset:-15%;background:radial-gradient(ellipse,#638aff1f,transparent 66%);animation:stage-breathe 6s ease-in-out infinite alternate;pointer-events:none}
+@keyframes aurora-drift{0%{transform:translate(0,0) rotate(-12deg) scale(1)}100%{transform:translate(22vw,15vh) rotate(20deg) scale(1.15)}}
+@keyframes stage-breathe{from{opacity:.4;transform:scale(.9)}to{opacity:1;transform:scale(1.08)}}
 button,input,a{-webkit-tap-highlight-color:transparent}
 button,input{font:inherit}
 button,a{touch-action:manipulation}
@@ -263,6 +281,11 @@ dialog::backdrop{background:#020c20df;backdrop-filter:blur(13px)}
  .recipe-card{max-width:300px;width:90%;margin:10px auto 10px;padding:28px;transform:rotate(3deg)}.recipe-card>div{font-size:22px}
  .site-footer{padding-top:32px;gap:15px}.site-footer>a:last-of-type{font-size:11px}.footer-bottom{flex-wrap:wrap;font-size:7px;gap:10px;padding-top:17px}
  .footer-bottom>span:nth-child(2){display:none}
+ .hero-socials{margin-top:20px;font-size:10px;gap:13px}
+ .footer-socials{width:100%;margin-left:0;gap:22px;font-size:11px}
+ .aurora{width:600px;height:600px;filter:blur(45px)}
+ .aurora-blue{left:-250px;top:-170px}.aurora-coral{right:-370px}
+ .pointer-light{display:none}
  .cinema-dialog{width:calc(100vw - 16px);border-radius:17px;max-height:calc(100dvh - 16px)}
  .cinema-bar{padding:10px 15px}.cinema-content{grid-template-columns:1fr}.video-wrap video{max-height:60dvh;min-height:200px}
  .cinema-info{padding:23px}.cinema-info h2{font-size:27px;margin:14px 0}.cinema-info>p{font-size:11px;margin-bottom:0}
@@ -272,4 +295,5 @@ dialog::backdrop{background:#020c20df;backdrop-filter:blur(13px)}
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .js-reveal .reveal:not(.visible){opacity:1;transform:none}
+ .pointer-light{display:none}
 }

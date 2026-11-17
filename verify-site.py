@@ -28,7 +28,13 @@ class References(HTMLParser):
             if key in ('src','href','data-image') and value and not value.startswith(('#','https:','http:','data:')):
                 asset(value)
 
-References().feed((DIST/'index.html').read_text(encoding='utf8'))
+html=(DIST/'index.html').read_text(encoding='utf8')
+References().feed(html)
+assert '<title>Agent Ozone' in html
+assert 'github.com' not in html
+assert 'https://www.instagram.com/shaileshtunes/' in html
+assert 'https://www.instagram.com/agent_ozy/' in html
+assert 'id="night-sky"' in html
 deployed_hashes={hashlib.sha256((DIST/film['video']).read_bytes()).hexdigest() for film in library}
 for video in ROOT.parent.glob('*.mp4'):
     assert hashlib.sha256(video.read_bytes()).hexdigest() in deployed_hashes,'Unlisted root video '+video.name

@@ -231,3 +231,104 @@ fetch('library.json').then(response=>{
   $('#results-note').textContent='The library couldn’t load. Refresh to try again.';
   $('#load-more').hidden=true;
 });
+
+// An ambient sky stays local to the page and pauses in background tabs.
+const sky=$('#night-sky');
+const skyContext=sky.getContext('2d');
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+const pointerPreference=window.matchMedia('(pointer: fine)');
+const pointerLight=$('#pointer-light');
+let skyWidth=0;
+let skyHeight=0;
+let stars=[];
+let skyFrame=null;
+let previousSkyTime=0;
+const pointer={x:-1000,y:-1000};
+
+function sizeSky(){
+  skyWidth=window.innerWidth;
+  skyHeight=window.innerHeight;
+  const scale=Math.min(window.devicePixelRatio||1,1.5);
+  sky.width=Math.round(skyWidth*scale);
+  sky.height=Math.round(skyHeight*scale);
+  skyContext.setTransform(scale,0,0,scale,0,0);
+  const count=skyWidth<600?30:70;
+  stars=Array.from({length:count},()=>({
+    x:Math.random(),y:Math.random(),size:.6+Math.random()*1.2,
+    phase:Math.random()*Math.PI*2,speed:.15+Math.random()*.45
+  }));
+  drawSky(0);
+}
+
+function drawSky(time){
+  skyContext.clearRect(0,0,skyWidth,skyHeight);
+  const seconds=motionPreference.matches?0:time/1000;
+  let connections=0;
+  for(const star of stars){
+    const x=(star.x*skyWidth+seconds*star.speed*2)%skyWidth;
+    const y=(star.y*skyHeight+Math.sin(seconds*.07+star.phase)*12+skyHeight)%skyHeight;
+    const alpha=.2+.45*(.5+.5*Math.sin(seconds*.75+star.phase));
+    skyContext.fillStyle='rgba(190,218,255,'+alpha+')';
+    skyContext.beginPath();
+    skyContext.arc(x,y,star.size,0,Math.PI*2);
+    skyContext.fill();
+    const distance=Math.hypot(x-pointer.x,y-pointer.y);
+    if(!motionPreference.matches&&distance<150&&connections<7){
+      skyContext.strokeStyle='rgba(132,191,255,'+((1-distance/150)*.22)+')';
+      skyContext.lineWidth=.7;
+      skyContext.beginPath();
+      skyContext.moveTo(pointer.x,pointer.y);
+      skyContext.lineTo(x,y);
+      skyContext.stroke();
+      connections++;
+    }
+  }
+  const sweep=(seconds+3)%12;
+  if(!motionPreference.matches&&sweep<1.4){
+    const progress=sweep/1.4;
+    const x=skyWidth*(.12+progress*.65),y=skyHeight*(.08+progress*.30);
+    const trail=skyContext.createLinearGradient(x-100,y-45,x,y);
+    trail.addColorStop(0,'rgba(178,222,255,0)');
+    trail.addColorStop(1,'rgba(207,238,255,'+(Math.sin(progress*Math.PI)*.7)+')');
+    skyContext.strokeStyle=trail;
+    skyContext.lineWidth=1.2;
+    skyContext.beginPath();
+    skyContext.moveTo(x-100,y-45);
+    skyContext.lineTo(x,y);
+    skyContext.stroke();
+  }
+}
+
+function animateSky(time){
+  if(time-previousSkyTime>32){
+    drawSky(time);
+    previousSkyTime=time;
+  }
+  skyFrame=requestAnimationFrame(animateSky);
+}
+
+function updateSkyMotion(){
+  if(skyFrame!==null)cancelAnimationFrame(skyFrame);
+  skyFrame=null;
+  if(!document.hidden&&!motionPreference.matches)skyFrame=requestAnimationFrame(animateSky);
+  else drawSky(0);
+}
+if(skyContext){
+  sizeSky();
+  updateSkyMotion();
+  window.addEventListener('resize',sizeSky,{passive:true});
+  document.addEventListener('visibilitychange',updateSkyMotion);
+  motionPreference.addEventListener('change',updateSkyMotion);
+  window.addEventListener('pointermove',event=>{
+    if(!pointerPreference.matches||motionPreference.matches)return;
+    pointer.x=event.clientX;
+    pointer.y=event.clientY;
+    pointerLight.style.opacity='1';
+    pointerLight.style.transform='translate('+(event.clientX-240)+'px,'+(event.clientY-240)+'px)';
+  },{passive:true});
+  document.documentElement.addEventListener('pointerleave',()=>{
+    pointer.x=-1000;
+    pointer.y=-1000;
+    pointerLight.style.opacity='0';
+  });
+}

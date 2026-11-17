@@ -6,4 +6,5 @@ node_modules/
 *.log
 __pycache__/
 preview-*.png
+preview-*.jpg
 qa-report.json
