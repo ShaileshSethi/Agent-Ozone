@@ -1,0 +1,211 @@
+[
+  {
+    "id": "day-13",
+    "title": "The launch-day plan",
+    "category": "GTA VI",
+    "episode": 13,
+    "description": "A perfect plan. One very inconvenient traffic cone.",
+    "video": "media/videos/day-13.mp4",
+    "poster": "media/posters/day-13.jpg",
+    "duration": 38.41,
+    "label": "0:38"
+  },
+  {
+    "id": "day-12",
+    "title": "The Vice City briefing",
+    "category": "GTA VI",
+    "episode": 12,
+    "description": "The boy, Codex, and a room ready for launch night.",
+    "video": "media/videos/day-12.mp4",
+    "poster": "media/posters/day-12.jpg",
+    "duration": 70.47,
+    "label": "1:10"
+  },
+  {
+    "id": "day-11",
+    "title": "Leave the pause in",
+    "category": "Midnight life",
+    "episode": 11,
+    "description": "A little look at the code, voices and quiet moments behind the films.",
+    "video": "media/videos/day-11.mp4",
+    "poster": "media/posters/day-11.jpg",
+    "duration": 54.29,
+    "label": "0:54"
+  },
+  {
+    "id": "day-10",
+    "title": "The real jumpscare",
+    "category": "Midnight life",
+    "episode": 10,
+    "description": "A tiny ghost costume. A Halloween night in MASH LAB.",
+    "video": "media/videos/day-10.mp4",
+    "poster": "media/posters/day-10.jpg",
+    "duration": 60.81,
+    "label": "1:00"
+  },
+  {
+    "id": "day-09",
+    "title": "The refresh button",
+    "category": "Midnight life",
+    "episode": 9,
+    "description": "Another late-night conversation with a familiar blue friend.",
+    "video": "media/videos/day-09.mp4",
+    "poster": "media/posters/day-09.jpg",
+    "duration": 62.32,
+    "label": "1:02"
+  },
+  {
+    "id": "day-08",
+    "title": "Will anyone try it?",
+    "category": "Midnight life",
+    "episode": 8,
+    "description": "Putting Ozonewalk into the world, one uncertain step at a time.",
+    "video": "media/videos/day-08.mp4",
+    "poster": "media/posters/day-08.jpg",
+    "duration": 66.04,
+    "label": "1:06"
+  },
+  {
+    "id": "day-07",
+    "title": "Still building",
+    "category": "Midnight life",
+    "episode": 7,
+    "description": "Finding users, fixing bugs and coming back tomorrow.",
+    "video": "media/videos/day-07.mp4",
+    "poster": "media/posters/day-07.jpg",
+    "duration": 65.2,
+    "label": "1:05"
+  },
+  {
+    "id": "day-06",
+    "title": "The rehearsal",
+    "category": "Midnight life",
+    "episode": 6,
+    "description": "Rain outside. Coffee inside. A conversation rehearsed too many times.",
+    "video": "media/videos/day-06.mp4",
+    "poster": "media/posters/day-06.jpg",
+    "duration": 44.58,
+    "label": "0:44"
+  },
+  {
+    "id": "day-05",
+    "title": "My plans count too",
+    "category": "Midnight life",
+    "episode": 5,
+    "description": "Making room for your time, and coffee with a friend.",
+    "video": "media/videos/day-05.mp4",
+    "poster": "media/posters/day-05.jpg",
+    "duration": 60.35,
+    "label": "1:00"
+  },
+  {
+    "id": "day-04",
+    "title": "Tomorrow me",
+    "category": "Midnight life",
+    "episode": 4,
+    "description": "A huge life overhaul becomes one small step.",
+    "video": "media/videos/day-04.mp4",
+    "poster": "media/posters/day-04.jpg",
+    "duration": 57.45,
+    "label": "0:57"
+  },
+  {
+    "id": "day-03",
+    "title": "Everyone’s ahead",
+    "category": "Midnight life",
+    "episode": 3,
+    "description": "Views, comparison and the feeling that everyone got a head start.",
+    "video": "media/videos/day-03.mp4",
+    "poster": "media/posters/day-03.jpg",
+    "duration": 61.72,
+    "label": "1:01"
+  },
+  {
+    "id": "day-02",
+    "title": "One last tab",
+    "category": "Midnight life",
+    "episode": 2,
+    "description": "The familiar room. The familiar promise of one more minute.",
+    "video": "media/videos/day-02.mp4",
+    "poster": "media/posters/day-02.jpg",
+    "duration": 45.0,
+    "label": "0:45"
+  },
+  {
+    "id": "day-01",
+    "title": "Perfecting the start",
+    "category": "Midnight life",
+    "episode": 1,
+    "description": "The first film. Trying to get everything right before beginning.",
+    "video": "media/videos/day-01.mp4",
+    "poster": "media/posters/day-01.jpg",
+    "duration": 40.75,
+    "label": "0:40"
+  },
+  {
+    "id": "football",
+    "title": "A minute of El Clásico",
+    "category": "Experiments",
+    "episode": null,
+    "description": "A different kind of story, told through a tactical animation.",
+    "video": "media/videos/football.mp4",
+    "poster": "media/posters/football.jpg",
+    "duration": 60.0,
+    "label": "1:00"
+  },
+  {
+    "id": "ahead-first",
+    "title": "Everyone’s ahead · first cut",
+    "category": "Experiments",
+    "episode": null,
+    "description": "An earlier version from the animation workbench.",
+    "video": "media/videos/ahead-first.mp4",
+    "poster": "media/posters/ahead-first.jpg",
+    "duration": 38.85,
+    "label": "0:38"
+  },
+  {
+    "id": "winter",
+    "title": "Perfecting the start · winter",
+    "category": "Experiments",
+    "episode": null,
+    "description": "The winter-outfit experiment from the early series.",
+    "video": "media/videos/winter.mp4",
+    "poster": "media/posters/winter.jpg",
+    "duration": 40.73,
+    "label": "0:40"
+  },
+  {
+    "id": "start-three",
+    "title": "Perfecting the start · early render",
+    "category": "Experiments",
+    "episode": null,
+    "description": "An early version of the first story.",
+    "video": "media/videos/start-three.mp4",
+    "poster": "media/posters/start-three.jpg",
+    "duration": 40.73,
+    "label": "0:40"
+  },
+  {
+    "id": "pilot-two",
+    "title": "Everyday ChatGPT · pilot 02",
+    "category": "Experiments",
+    "episode": null,
+    "description": "One of the first tests of the boy and Codex.",
+    "video": "media/videos/pilot-two.mp4",
+    "poster": "media/posters/pilot-two.jpg",
+    "duration": 15.0,
+    "label": "0:15"
+  },
+  {
+    "id": "pilot-one",
+    "title": "Everyday ChatGPT · pilot 01",
+    "category": "Experiments",
+    "episode": null,
+    "description": "Where this little animated universe began.",
+    "video": "media/videos/pilot-one.mp4",
+    "poster": "media/posters/pilot-one.jpg",
+    "duration": 15.0,
+    "label": "0:15"
+  }
+]

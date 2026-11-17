@@ -1,0 +1,9 @@
+.env
+.env.*
+node_modules/
+.sites-runtime/
+.sites-checkout/
+*.log
+__pycache__/
+preview-*.png
+qa-report.json
