@@ -1,6 +1,6 @@
 # Agent Ozone
 
-The studio uses a Codex-inspired terminal identity with an original Ozone logo, twelve custom SVG icons, geometric Space Grotesk typography, charcoal, cream, orange and mascot-blue accents. Downloadable vectors live in `dist/brand`; the icon source is `brand-system.py`. Fonts are bundled locally with their OFL license in `dist/fonts`. Warm drifting light, ambient dust, a steaming coffee interaction and rotating Codex desk notes make the space feel inhabited. Motion respects reduced-motion settings; the canvas pauses in hidden tabs.
+The studio uses a charcoal, cream and burnt-orange palette, locally bundled Fraunces and Space Grotesk fonts (OFL licenses in `dist/fonts`), warm drifting light, ambient dust, a steaming coffee interaction and rotating Codex desk notes. Motion respects reduced-motion settings; the ambient canvas pauses in hidden tabs.
 
 Shailesh Sethi's personal animation portfolio. A static website with a 19-film library, character and environment galleries, a responsive cinema player, animated Codex illustration and warm studio lighting toggle. Instagram links point to @shaileshtunes and @agent_ozy.
 
